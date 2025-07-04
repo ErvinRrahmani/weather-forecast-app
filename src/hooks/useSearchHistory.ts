@@ -3,9 +3,7 @@ import type { SearchHistoryItem } from '../types/weather';
 import { STORAGE_KEYS } from '../constants/api';
 
 /**
- * Custom hook for managing search history
- * Following Single Responsibility Principle - only handles search history logic
- * Following Interface Segregation Principle - provides only needed methods
+ * Custom hook for managing search history with localStorage persistence
  */
 export const useSearchHistory = () => {
   const [history, setHistory] = useState<SearchHistoryItem[]>([]);

@@ -12,9 +12,7 @@ interface SearchHistoryProps {
 }
 
 /**
- * Search history component displaying recent searches
- * Following Single Responsibility Principle - only handles search history display
- * Following Open/Closed Principle - extensible through props
+ * Component that shows recent search history
  */
 export const SearchHistory: React.FC<SearchHistoryProps> = ({
   history,

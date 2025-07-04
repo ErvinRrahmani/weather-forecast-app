@@ -3,9 +3,7 @@ import { API_CONFIG, API_ENDPOINTS } from '../constants/api';
 import { transformWeatherData, mapApiErrorToMessage } from '../utils/weatherUtils';
 
 /**
- * Weather API Service
- * Following Single Responsibility Principle - only handles API communication
- * Following Dependency Inversion Principle - depends on abstractions (interfaces)
+ * Service for handling weather API requests
  */
 export class WeatherService {
   private readonly baseUrl: string;

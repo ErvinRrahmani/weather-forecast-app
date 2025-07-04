@@ -15,9 +15,7 @@ interface WeatherDisplayProps {
 }
 
 /**
- * Weather display component showing current weather information
- * Following Single Responsibility Principle - only handles weather data display
- * Following Open/Closed Principle - extensible through props
+ * Component that displays current weather information
  */
 export const WeatherDisplay: React.FC<WeatherDisplayProps> = ({ 
   weatherData, 

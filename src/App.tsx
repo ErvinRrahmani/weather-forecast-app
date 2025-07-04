@@ -6,9 +6,7 @@ import { useSearchHistory } from './hooks/useSearchHistory';
 import './App.css';
 
 /**
- * Main Application Component
- * Following Single Responsibility Principle - orchestrates weather app functionality
- * Following Dependency Inversion Principle - depends on abstractions (hooks)
+ * Main application component that coordinates the weather app
  */
 function App() {
   const { 

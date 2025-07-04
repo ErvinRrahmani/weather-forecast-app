@@ -2,8 +2,7 @@ import type { WeatherResponse, WeatherData } from '../types/weather';
 import { ERROR_MESSAGES } from '../constants/api';
 
 /**
- * Transforms raw weather API response to simplified weather data
- * Following Single Responsibility Principle - only handles data transformation
+ * Transforms API response data into a cleaner format for the UI
  */
 export const transformWeatherData = (response: WeatherResponse): WeatherData => {
   const weather = response.weather[0];
@@ -38,10 +37,10 @@ export const formatWindSpeed = (speed: number, unit: string = 'm/s'): string => 
 };
 
 /**
- * Capitalizes first letter of each word
+ * Capitalizes the first letter of each word
  */
-export const capitalizeWords = (text: string): string => {
-  return text
+export const capitalizeWords = (str: string): string => {
+  return str
     .split(' ')
     .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
     .join(' ');
@@ -55,15 +54,14 @@ export const formatDateTime = (timestamp: number): string => {
 };
 
 /**
- * Generates weather icon URL
+ * Generates weather icon URL from icon code
  */
 export const getWeatherIconUrl = (iconCode: string): string => {
   return `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
 };
 
 /**
- * Maps API error codes to user-friendly messages
- * Following Open/Closed Principle - easy to extend with new error codes
+ * Maps API error responses to user-friendly messages
  */
 export const mapApiErrorToMessage = (error: any): string => {
   if (error.response?.status) {

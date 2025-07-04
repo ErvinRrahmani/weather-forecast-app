@@ -4,9 +4,7 @@ import { weatherService } from '../services/weatherService';
 import { validateCityName } from '../utils/weatherUtils';
 
 /**
- * Custom hook for weather data management
- * Following Single Responsibility Principle - only handles weather data logic
- * Following Dependency Inversion Principle - depends on weather service abstraction
+ * Custom hook for managing weather data and loading states
  */
 export const useWeather = () => {
   const [state, setState] = useState<WeatherState>({

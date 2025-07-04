@@ -7,9 +7,7 @@ interface SearchFormProps {
 }
 
 /**
- * Search form component for weather data
- * Following Single Responsibility Principle - only handles search input
- * Following Open/Closed Principle - extensible through props
+ * Search form component for entering city names
  */
 export const SearchForm: React.FC<SearchFormProps> = ({ onSearch, loading = false }) => {
   const [cityName, setCityName] = useState('');
