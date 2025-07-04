@@ -2,9 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import type { SearchHistoryItem } from '../types/weather';
 import { STORAGE_KEYS } from '../constants/api';
 
-/**
- * Custom hook for managing search history with localStorage persistence
- */
+// Custom hook for managing search history with localStorage persistence
 export const useSearchHistory = () => {
   const [history, setHistory] = useState<SearchHistoryItem[]>([]);
   const [recentlyRemoved, setRecentlyRemoved] = useState<SearchHistoryItem | null>(null);
@@ -36,11 +34,7 @@ export const useSearchHistory = () => {
     }
   }, [history]);
 
-  /**
-   * Adds a new search to history or updates existing one
-   * @param cityName - Name of the searched city
-   * @param country - Country code
-   */
+  // Adds a new search to history or updates existing one
   const addToHistory = useCallback((cityName: string, country: string) => {
     setHistory(prev => {
       // Check if city already exists in history
@@ -68,10 +62,7 @@ export const useSearchHistory = () => {
     });
   }, []);
 
-  /**
-   * Removes an item from history
-   * @param id - ID of the item to remove
-   */
+  // Removes an item from history
   const removeFromHistory = useCallback((id: string) => {
     setHistory(prev => {
       const itemToRemove = prev.find(item => item.id === id);
@@ -84,9 +75,7 @@ export const useSearchHistory = () => {
     });
   }, []);
 
-  /**
-   * Restores the most recently removed item
-   */
+  // Restores the most recently removed item
   const undoRemove = useCallback(() => {
     if (recentlyRemoved) {
       setHistory(prev => [recentlyRemoved, ...prev]);
@@ -94,19 +83,13 @@ export const useSearchHistory = () => {
     }
   }, [recentlyRemoved]);
 
-  /**
-   * Clears all search history
-   */
+  // Clears all search history
   const clearHistory = useCallback(() => {
     setHistory([]);
     setRecentlyRemoved(null);
   }, []);
 
-  /**
-   * Gets a specific history item by ID
-   * @param id - ID of the item to find
-   * @returns SearchHistoryItem or undefined
-   */
+  // Gets a specific history item by ID
   const getHistoryItem = useCallback((id: string): SearchHistoryItem | undefined => {
     return history.find(item => item.id === id);
   }, [history]);

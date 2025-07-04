@@ -2,9 +2,7 @@ import type { WeatherResponse, WeatherData } from '../types/weather';
 import { API_CONFIG, API_ENDPOINTS } from '../constants/api';
 import { transformWeatherData, mapApiErrorToMessage } from '../utils/weatherUtils';
 
-/**
- * Service for handling weather API requests
- */
+// Service for handling weather API requests
 export class WeatherService {
   private readonly baseUrl: string;
   private readonly apiKey: string;
@@ -14,11 +12,7 @@ export class WeatherService {
     this.apiKey = apiKey;
   }
 
-  /**
-   * Fetches current weather data for a given city
-   * @param cityName - Name of the city to fetch weather for
-   * @returns Promise with weather data
-   */
+  // Fetches current weather data for a given city
   async getCurrentWeather(cityName: string): Promise<WeatherData> {
     try {
       const url = this.buildWeatherUrl(cityName);
@@ -35,11 +29,7 @@ export class WeatherService {
     }
   }
 
-  /**
-   * Builds the complete URL for weather API request
-   * @param cityName - Name of the city
-   * @returns Complete API URL
-   */
+  // Builds the complete URL for weather API request
   private buildWeatherUrl(cityName: string): string {
     const params = new URLSearchParams({
       q: cityName,
@@ -50,11 +40,7 @@ export class WeatherService {
     return `${this.baseUrl}${API_ENDPOINTS.CURRENT_WEATHER}?${params.toString()}`;
   }
 
-  /**
-   * Handles API error responses
-   * @param response - Failed fetch response
-   * @returns Error object with appropriate message
-   */
+  // Handles API error responses
   private async handleApiError(response: Response): Promise<Error> {
     let errorMessage = 'Unknown error occurred';
     

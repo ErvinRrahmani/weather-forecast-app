@@ -11,9 +11,7 @@ interface SearchHistoryProps {
   loading?: boolean;
 }
 
-/**
- * Component that shows recent search history
- */
+// Component that shows recent search history
 export const SearchHistory: React.FC<SearchHistoryProps> = ({
   history,
   onSelectCity,

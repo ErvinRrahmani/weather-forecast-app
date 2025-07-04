@@ -14,9 +14,7 @@ interface WeatherDisplayProps {
   loading?: boolean;
 }
 
-/**
- * Component that displays current weather information
- */
+// Component that displays current weather information
 export const WeatherDisplay: React.FC<WeatherDisplayProps> = ({ 
   weatherData, 
   onRefresh,

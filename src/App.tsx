@@ -5,9 +5,7 @@ import { useWeather } from './hooks/useWeather';
 import { useSearchHistory } from './hooks/useSearchHistory';
 import './App.css';
 
-/**
- * Main application component that coordinates the weather app
- */
+// Main application component that coordinates the weather app
 function App() {
   const { 
     data: weatherData, 

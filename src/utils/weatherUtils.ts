@@ -1,9 +1,7 @@
 import type { WeatherResponse, WeatherData } from '../types/weather';
 import { ERROR_MESSAGES } from '../constants/api';
 
-/**
- * Transforms API response data into a cleaner format for the UI
- */
+// Transforms API response data into a cleaner format for the UI
 export const transformWeatherData = (response: WeatherResponse): WeatherData => {
   const weather = response.weather[0];
   
@@ -22,23 +20,17 @@ export const transformWeatherData = (response: WeatherResponse): WeatherData => 
   };
 };
 
-/**
- * Formats temperature with unit
- */
+// Formats temperature with unit
 export const formatTemperature = (temp: number, unit: string = '°C'): string => {
   return `${temp}${unit}`;
 };
 
-/**
- * Formats wind speed with unit
- */
+// Formats wind speed with unit
 export const formatWindSpeed = (speed: number, unit: string = 'm/s'): string => {
   return `${speed} ${unit}`;
 };
 
-/**
- * Capitalizes the first letter of each word
- */
+// Capitalizes the first letter of each word
 export const capitalizeWords = (str: string): string => {
   return str
     .split(' ')
@@ -46,23 +38,17 @@ export const capitalizeWords = (str: string): string => {
     .join(' ');
 };
 
-/**
- * Formats date/time for display
- */
+// Formats date/time for display
 export const formatDateTime = (timestamp: number): string => {
   return new Date(timestamp).toLocaleString();
 };
 
-/**
- * Generates weather icon URL from icon code
- */
+// Generates weather icon URL from icon code
 export const getWeatherIconUrl = (iconCode: string): string => {
   return `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
 };
 
-/**
- * Maps API error responses to user-friendly messages
- */
+// Maps API error responses to user-friendly messages
 export const mapApiErrorToMessage = (error: any): string => {
   if (error.response?.status) {
     switch (error.response.status) {
@@ -84,9 +70,7 @@ export const mapApiErrorToMessage = (error: any): string => {
   return error.message || ERROR_MESSAGES.GENERIC_ERROR;
 };
 
-/**
- * Validates city name input
- */
+// Validates city name input
 export const validateCityName = (cityName: string): { isValid: boolean; error?: string } => {
   const trimmed = cityName.trim();
   

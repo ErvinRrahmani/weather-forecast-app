@@ -6,9 +6,7 @@ interface SearchFormProps {
   loading?: boolean;
 }
 
-/**
- * Search form component for entering city names
- */
+// Search form component for entering city names
 export const SearchForm: React.FC<SearchFormProps> = ({ onSearch, loading = false }) => {
   const [cityName, setCityName] = useState('');
   const [error, setError] = useState<string | null>(null);
@@ -52,7 +50,7 @@ export const SearchForm: React.FC<SearchFormProps> = ({ onSearch, loading = fals
             onChange={handleInputChange}
             placeholder="Enter city name (e.g., London, New York, Tokyo)..."
             className={`
-              w-full pl-14 pr-6 py-5 text-lg
+              w-full pl-6 pr-6 py-5 text-lg
               bg-white/95 backdrop-blur-sm
               border-2 rounded-2xl
               shadow-lg shadow-black/5
@@ -69,7 +67,6 @@ export const SearchForm: React.FC<SearchFormProps> = ({ onSearch, loading = fals
             aria-describedby={error ? "search-error" : undefined}
           />
           
-          {/* Loading indicator inside input */}
           {loading && (
             <div className="absolute inset-y-0 right-0 pr-6 flex items-center">
               <svg className="animate-spin h-6 w-6 text-blue-500" fill="none" viewBox="0 0 24 24">
@@ -80,7 +77,6 @@ export const SearchForm: React.FC<SearchFormProps> = ({ onSearch, loading = fals
           )}
         </div>
 
-        {/* Error Message */}
         {error && (
           <div 
             id="search-error"
@@ -94,7 +90,6 @@ export const SearchForm: React.FC<SearchFormProps> = ({ onSearch, loading = fals
           </div>
         )}
 
-        {/* Full Width Search Button */}
         <button
           type="submit"
           disabled={loading || !cityName.trim()}
