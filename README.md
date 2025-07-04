@@ -3,12 +3,12 @@
 A simple weather app built with React and TypeScript. Search for any city and get current weather information!
 
 ## What it does
-- 🌤️ Shows current weather for any city
-- 📊 Displays temperature, weather description, and wind speed
-- 📝 Keeps a history of your searches
-- ↩️ Click on history items to search again
-- 🗑️ Remove items from history (with undo option)
-- 📱 Works on desktop and mobile
+- Shows current weather for any city
+- Displays temperature, weather description, and wind speed
+- Keeps a history of your searches
+- Click on history items to search again
+- Remove items from history (with undo option)
+- Works on desktop and mobile
 
 ## Quick Start
 
@@ -30,7 +30,7 @@ Open http://localhost:5173 in your browser.
 5. Replace `your-api-key-here` with your actual API key
 
 ### 3. That's it!
-Search for any city and enjoy the weather! 🌈
+Search for any city and enjoy the weather!
 
 ## Other Commands
 ```bash
@@ -58,12 +58,12 @@ src/
 ```
 
 **Quality Features:**
-- ✅ TypeScript for better code
-- ✅ 47 automated tests
-- ✅ Error handling
-- ✅ Loading states
-- ✅ Responsive design
-- ✅ Accessibility support
+- TypeScript for better code
+- 47 automated tests
+- Error handling
+- Loading states
+- Responsive design
+- Accessibility support
 
 ## Need Help?
 
@@ -77,4 +77,4 @@ The code is organized to make adding new features easy. Each component is indepe
 
 ---
 
-Made with ❤️ using React, TypeScript, and Tailwind CSS
+Made with React, TypeScript, and Tailwind CSS
